@@ -78,7 +78,6 @@ public:
             Parcel* reply, uint32_t flags = 0);
     virtual bool needsReleaseNotify();
     virtual void onBuffersDiscarded(const std::vector<int32_t>& slots);
-    virtual void onBufferDetached(int slot);
 };
 
 #else
@@ -92,7 +91,6 @@ public:
     virtual ~StubProducerListener();
     virtual void onBufferReleased() {}
     virtual bool needsReleaseNotify() { return false; }
-    virtual void onBufferDetached(int /**slot**/) {}
 };
 
 } // namespace android
